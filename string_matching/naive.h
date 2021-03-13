@@ -1,6 +1,7 @@
 #include <string>
+#include <vector>
 
-std::vector<int> naive_string_matcher(std::string& T, std::string& P) { 
+std::vector<int> naive_string_matcher(const std::string& T, const std::string& P) { 
 	std::vector<int> valid_shifts; 
 		
 	for (int s = 0; s <= T.size() - P.size(); ++s) {  		
@@ -17,3 +18,10 @@ std::vector<int> naive_string_matcher(std::string& T, std::string& P) {
 	return valid_shifts;
 }
 
+
+template<typename T>
+void print(const std::vector<T>& v) { 
+	for (auto& i : v) 
+		std::cout << i << "\n";
+}
+ 
